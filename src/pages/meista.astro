@@ -1,0 +1,222 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import juusoImage from '../assets/uploads/juuso1.webp';
+import marikaImage from '../assets/uploads/marika.webp';
+---
+
+<Layout
+title="Meistä"
+description="Meriadoc on Suomen Turusta kotoisin oleva kahden henkilön web-kehitykseen erikoistunut yritys, joka haluaa tarjota yrityksille aidosti laadukkaita verkkosivuja ilman, että menemme sieltä mistä aita on matalin.">
+
+<section class="w-full relative min-h-[300px] md:min-h-[400px] flex justify-center">
+    <div class="max-w-8xl w-full relative">
+    
+    <picture>
+      <source media="(min-width: 768px)" srcset="/images/uploads/bg-green-d.svg">
+      <img
+        src="/images/uploads/bg-green-m-ala.svg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+      />
+    </picture>
+
+    <div class="relative z-10 py-s-10-m px-s-3-m md:py-s-10-d md:px-[68px]">
+      <div>
+        <h1 class="text-h1-m md:text-h1-d font-heading md:leading-[84px] md:pb-s-3-d pb-s-5-m">
+          Meistä
+        </h1>
+      </div>
+
+      <div class="inline-flex justify-start items-end gap-16">
+        <p class="md:w-[641px] justify-start font-normal md:text-base leading-6 md:gap-7">
+          Meriadoc on turkulainen kahden hengen web-kehitykseen erikoistunut yritys. 
+          Toteutamme yrityksille nopeat ja hakukoneystävälliset verkkosivut ilman valmisteemoja – ja autamme tarvittaessa myös sisällöissä ja hakukoneoptimoinnissa.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full">
+  <div class="max-w-8xl mx-auto pt-s-10-m md:pt-s-10-d px-s-3-m md:px-[68px]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-x-[138px] gap-y-8">     
+      <h2 class="text-h2-m md:text-h2-d font-heading leading-[38.4px] md:leading-[46.2px]max-w-xl">
+        Mikä Meriadoc on?
+      </h2>       
+        <p class="leading-6">
+          Meriadoc syntyi halusta tehdä verkkosivuja ilman kompromisseja. Emme rakenna sivustoja valmiiden pohjien päälle, 
+          vaan suunnittelemme ja toteutamme jokaisen projektin alusta asti asiakkaan tavoitteiden mukaan. Lopputulos ei 
+          ole vain visuaalisesti näyttävä, vaan myös teknisesti kevyt ja hakukoneystävällinen – ilman raskaita editoreita 
+          ja turhia lisäosia.
+        </p>
+      </div>
+    </div>
+  </div> 
+</section>
+
+
+<section class="w-full">
+<div class="max-w-8xl mx-auto pt-s-10-m md:pt-s-10-d px-s-3-m md:px-[68px]">
+    <div class="flex justify-start">
+        <h2 class="text-h2-m md:text-h2-d font-normal font-heading md:leading-[46.2px] pb-s-5-m md:pb-s-5-d">
+            Arvomme
+        </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+        <div class="border border-primary flex flex-col h-full bg-white">
+            <div class="py-s-6-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start pb-s-1-m md:pb-s-2-d">
+                <img src="/images/uploads/heart.svg" alt="" class="w-8 h-7 md:w-10 md:h-8">
+              </div>
+              <div class="flex justify-start pb-s-4-m md:pb-s-4-d">
+                <h4 class="text-h3-m md:text-h4-d font-heading">
+                  Intohimo
+                </h4>
+              </div>
+              <div class="flex justify-start">  
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Intohimomme on toteuttaa yrityksille laadukkaita ja yksilöllisiä kotisivuja. Teemme ratkaisuja sekä 
+                  aloitteleville yrittäjille että suuremmille organisaatioille – aina tarpeen ja tavoitteiden mukaan.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="border border-primary flex flex-col h-full bg-white">
+            <div class="py-s-6-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start pb-s-1-m md:pb-s-2-d">
+                <img src="/images/uploads/star.svg" alt="" class="w-8 h-7 md:w-10 md:h-8">
+              </div>
+              <div class="flex justify-start pb-s-4-m md:pb-s-4-d">
+                <h4 class="text-h3-m md:text-h4-d font-heading">
+                  Ammattitaito
+                </h4>
+              </div>
+              <div class="flex justify-start">  
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Kehitämme osaamistamme jatkuvasti ja seuraamme alan kehitystä, jotta 
+                  voimme tarjota asiakkaillemme moderneja ja luotettavia ratkaisuja.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="border border-primary flex flex-col h-full bg-white">
+            <div class="py-s-6-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start pb-s-1-m md:pb-s-2-d">
+                <img src="/images/uploads/idea.svg" alt="" class="w-8 h-7 md:w-10 md:h-8">
+              </div>
+              <div class="flex justify-start pb-s-4-m md:pb-s-4-d">
+                <h4 class="text-h3-m md:text-h4-d font-heading">
+                  Luovuus
+                </h4>
+              </div>
+              <div class="flex justify-start">  
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Emme tee massatuotantoa, vaan suunnittelemme jokaisen projektin yksilöllisesti. 
+                  Ratkaisumme eivät tule valmispohjista, vaan asiakkaan tavoitteista ja tarpeista.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="border border-primary flex flex-col h-full bg-white">
+            <div class="py-s-6-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start pb-s-1-m md:pb-s-2-d">
+                <img src="/images/uploads/eyes.svg" alt="" class="w-8 h-7 md:w-10 md:h-8">
+              </div>
+              <div class="flex justify-start pb-s-4-m md:pb-s-4-d">
+                <h4 class="text-h3-m md:text-h4-d font-heading">
+                  Huolenpito
+                </h4>
+              </div>
+              <div class="flex justify-start">  
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Emme jätä asiakasta yksin. Meihin saa helposti yhteyden ja tarjoamme tukea sekä ylläpitoa myös projektin valmistumisen jälkeen.
+                </p>
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<section class="w-full">
+    <div class="max-w-8xl mx-auto pt-s-10-m md:py-s-10-d px-s-3-m md:px-[68px]">
+        <div class="flex justify-start text-h2-m md:text-h2-d font-heading pb-s-5-m md:pb-s-5-d">
+            <h2>
+                Keitä me olemme?
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 md:pb-s-6-d">
+            <div class="order-2 lg:order-1 flex flex-col pb-s-7-m md:pb-s-6-d">
+                <div class="md:text-lg md:leading-5 text-stone-500 pb-s-1-m md:pb-s-1-d">
+                    <p>
+                        Perustaja, web-kehittäjä, sisällöntuottaja
+                    </p>
+                </div>
+                <div class="text-h3-m md:text-h3-d font-heading leading-[34.8px] md:leading-[41.8px] pb-s-3-m md:pb-s-3-d">
+                    <h3>
+                        Juuso Silén
+                    </h3>
+                </div>
+                <div class="md:leading-6 md:max-w-xl">
+                    <p>
+                      Olen web-kehittäjä, jota motivoi tehdä internetistä selkeämpi ja toimivampi. Olen työskennellyt 
+                      monipuolisesti eri web-teknologioiden parissa, ja erityinen vahvuuteni on rakentaa moderneja, nopeita 
+                      ja kevyitä verkkosivuja myös silloin, kun budjetti on rajallinen. Uskon, että jokaisella yrityksellä on 
+                      oikeus saada laadukkaat ja itsensä näköiset verkkosivut ilman raskaita valmisteemoja. 
+                      Teen myös sisällöntuotantoa, ja vahvinta osaamistani ovat hakukoneoptimoidut (SEO) tekstit.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 lg:items-end flex justify-start lg:justify-end">
+                <Image 
+                  src={juusoImage} 
+                  alt="Juuso Silén" 
+                  class="w-96 md:w-[530px] aspect-[4/3] object-cover pb-s-4-m md:pb-0-d"
+                  widths={[400, 600]}
+                />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="order-2 lg:order-1 flex flex-col">
+                <div class="md:text-lg md:leading-5 text-stone-500 pb-s-1-m md:pb-s-1-d">
+                    <p>
+                        UI/UX- ja websuunnittelija, graafinen suunnittelija
+                    </p>
+                </div>
+                <div class="text-h3-m md:text-h3-d font-heading leading-[34.8px] md:leading-[41.8px] pb-s-3-m md:pb-s-3-d">
+                    <h3>
+                        Marika Heino
+                    </h3>
+                </div>
+                <div class="md:leading-6 md:max-w-xl">
+                    <p>
+                        Hei! Olen Marika, UI/UX- ja websuunnittelija. Työssäni parasta on saada ideoida ratkaisuja, joissa 
+                        käytettävyys ja luovuus tukevat toisiaan. Haluan luoda verkkosivuja, jotka eivät ole vain kauniita, vaan myös toimivia, selkeitä 
+                        ja helposti lähestyttäviä. Onnistuneet verkkosivut syntyvät huolellisesta suunnittelusta sekä asiakkaan ja kohderyhmän
+                        tarpeiden ymmärtämisestä. Suunnittelu on minulle ennen kaikkea luovaa ajattelua, taitoa kuunnella ja yhdessä tekemistä,
+                        lopputuloksena syntyy kokonaisuuksia, jotka ovat sekä visuaalisesti että käytettävyydeltään miellyttäviä.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 lg:items-end flex justify-start lg:justify-end">
+                <Image 
+                  src={marikaImage} 
+                  alt="Marika Heino" 
+                  class="w-96 md:w-[530px] aspect-[4/3] object-cover pb-s-4-m md:pb-0-d"
+                  widths={[400, 600]}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+</Layout>

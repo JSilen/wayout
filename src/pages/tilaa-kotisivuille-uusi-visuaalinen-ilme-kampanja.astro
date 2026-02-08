@@ -1,0 +1,371 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+title="Tammikuun kampanja"
+description="Meriadoc tarjoaa tammikuun ajan täysin ilmaisen visuaalisen ilmeen yritysten kotisivujen etusivulle. Täytä vain lomake ja olemme sinuun yhteydessä!">
+
+<section class="w-full relative min-h-[300px] md:min-h-[400px] flex justify-center">
+    <div class="max-w-8xl w-full relative">
+    
+    <picture>
+      <source media="(min-width: 768px)" srcset="/images/uploads/bg-green-d.svg">
+      <img
+        src="/images/uploads/bg-green-m-ala.svg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+      />
+    </picture>
+
+    <div class="relative z-10 py-s-10-m px-s-3-m md:py-s-10-d md:px-[68px]">
+      <div>
+        <h1 class="text-h1-m md:text-h1-d font-heading md:leading-[84px] md:pb-s-3-d pb-s-5-m">
+          Tilaa ilmainen design
+        </h1>
+      </div>
+
+      <div class="inline-flex justify-start items-end gap-16">
+        <p class="max-w-[641px] justify-start font-normal md:text-base leading-6 md:gap-7">
+          Tarjoamme tammikuun ajan jokaiselle halukkaalle yritykselle täysin ilmaisen visuaalisen ilmeen kotisivujen etusivulle. Täytä alla oleva lomake ja olemme sinuun yhteydessä.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full">
+  <div class="max-w-4xl mx-auto pb-s-10-m md:py-s-10-d px-s-3-m md:px-[68px]">
+    <h2 class="text-h2-m md:text-h2-d font-heading leading-[38.4px] pb-s-5-m md:pb-s-8-d md:leading-[46.2px]">
+        Miten kampanja toimii?
+    </h2>
+    <p class="leading-6">
+        Yrittäjän elämä voi olla hyvinkin hektistä ja pitää sisällään monia eri osa-alueita. Asiakkaita pitäisi hankkia, töitä pitäisi tehdä. Siihen päälle vielä kirjanpidot, markkinoinnit, juoksevat asiat ja niin edelleen. 
+        Ei siis ihme, että internet on edelleen pullollaan yrityksiä, joiden kotisivuille ei ole tehty muutoksia aikoihin, tai sellaisia ei ole olemassa lainkaan. Monen yrittäjän kohdalla nämä asiat jäävät taka-alalle, sillä muuta työtä on vain yksinkertaisesti niin paljon.
+        <br /><br />
+        Me Meriadocilla haluamme tuoda tähän edes jonkin asteista helpotusta, sillä tarjoamme yrityksien kotisivujen modernisointiin ensimmäisen askeleen täysin ilmaiseksi. Tammikuun ajan jokainen halukas yritys voi tilata kauttamme vain yhden lomakkeen täyttämällä 
+        visuaalisen ilmeen uudistuksen kotisivujensa etusivulle. <strong>Hintaa tälle kertyy siis kokonaisuudessaan 0 €, eikä sitoumuksia ole. Lomakkeen täyttämisessäkin menee vain noin 5 minuuttia.</strong>
+        <br /><br />
+        Teemme sinulle raakavedoksen siitä, miltä kotisivusi voisivat näyttää modernilla ja visuaalisesti houkuttelevalla ilmeellä. Tämän jälkeen voit itse päättää, haluatko edetä kanssamme kohti kokonaisvaltaisempaa kotisivujen uudistusta vai et.
+        Kyseessä ei ole lopullinen tuote, vaan visuaalinen ehdotus siitä, miltä kotisivusi voisi näyttää. Vedoksen luomiseen menee tavanomaisesti 48 - 72 tuntia lomakkeen täyttämisestä.
+        <br /><br />
+        Huomioithan, että voimme toteuttaa vedoksia rajoitetun määrän viikossa varmistaaksemme laadun. Pidätämme oikeuden muutoksiin kampanjan aikataulun ja ehtojen osassa, mikäli kysyntä ylittää kapasiteettimme.
+        <br /><br />
+        <strong>Täytä alla oleva lomake ja me otamme homman haltuun!</strong>
+    </p>
+  </div>
+</section>
+
+<section class="w-full">
+    <div class="flex flex-col justify-center max-w-4xl mx-auto md:px-[68px] px-s-3-m pt-s-10-m">
+        <h2 class="text-h2-m md:text-h2-d font-heading md:leading-[46.2px] pb-s-5-m">
+            Tilaa ilmainen design kotisivujesi etusivulle
+        </h2>
+        <form
+          name="tilaa-ilmainen-design"
+          method="POST"
+          action="/viestin-lahetys-onnistui"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          class="flex flex-col gap-6" 
+          id="contactForm"
+        >
+          <input type="hidden" name="form-name" value="tilaa-ilmainen-design" />
+
+          <div class="hidden">
+            <label>
+              Älä täytä tätä jos olet ihminen: <input name="bot-field" />
+            </label>
+          </div>
+
+          <div>
+            <label for="company" class="block text-lg mb-2">Yritys*</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              required
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+            />
+          </div>
+
+          <div>
+            <label for="industry" class="block text-lg mb-2">Toimiala*</label>
+            <input
+              type="text"
+              id="industry"
+              name="industry"
+              required
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+            />
+          </div>
+
+          <div>
+            <label for="website" class="block text-lg mb-2">Nykyiset verkkosivut</label>
+            <input
+              type="text"
+              placeholder="Jos ei ole, jätä tyhjäksi"
+              id="website"
+              name="website"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white placeholder:text-black"
+            />
+          </div>
+
+          <div>
+            <label for="name" class="block text-lg mb-2">Nimi*</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white placeholder:text-black"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-lg mb-2">Sähköposti*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white placeholder:text-black"
+            />
+          </div>
+
+          <div>
+            <label for="palvelun-tarkoitus" class="block text-lg mb-2">Mikä on yrityksen, tuotteen tai palvelun tarkoitus?</label>
+            <textarea
+              id="palvelun-tarkoitus"
+              placeholder="1-2 lausetta riittää"
+              name="palvelun-tarkoitus"
+              rows="5"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-y placeholder:text-black"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="kohderyhmä" class="block text-lg mb-2">Tärkein kohderyhmä</label>
+            <textarea
+              id="kohderyhmä"
+              placeholder="Esim. ikä, elämäntilanne, ammatti yms. - lyhyt yleiskuva riittää"
+              name="kohderyhmä"
+              rows="5"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-y placeholder:text-black"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="kohderyhmä-tarpeet" class="block text-lg mb-2">Kohderyhmän tarpeet</label>
+            <textarea
+              id="kohderyhmä-tarpeet"
+              placeholder="Kohderyhmän tarpeet, toiveet tai ongelmat. 1-2 lausetta riittää"
+              name="kohderyhmä-tarpeet"
+              rows="5"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-y placeholder:text-black"
+            ></textarea>
+          </div>
+
+          <div class="relative">
+            <span class="block text-lg mb-2">Visuaalinen tyyli ja inspiraatio</span>
+            <details class="group w-full relative">
+              <summary class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white cursor-pointer list-none flex justify-between items-center text-black">
+                <span>Valitse sopivimmat (max. 3) vaihtoehtoa</span>
+                <svg class="w-4 h-4 text-black transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="absolute top-full left-0 w-full bg-white border border-black border-t-0 z-50 max-h-60 overflow-y-auto shadow-lg">
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="moderni" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Moderni</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="lammin" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Lämmin</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="ajaton" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Ajaton</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="minimalistinen" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Minimalistinen</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="persoonallinen" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Persoonallinen</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="visuaalinen-tyyli" value="luonnonlaheinen" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Luonnonläheinen</span>
+                </label>
+              </div>
+            </details>
+          </div>
+
+          <div class="relative">
+            <span class="block text-lg mb-2">Brändin luonne</span>
+            <details class="group w-full relative">
+              <summary class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white cursor-pointer list-none flex justify-between items-center text-black">
+                <span>Valitse sopivimmat (max. 3) vaihtoehtoa</span>
+                <svg class="w-4 h-4 text-black transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="absolute top-full left-0 w-full bg-white border border-black border-t-0 z-50 max-h-60 overflow-y-auto shadow-lg">
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="luotettava" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Luotettava</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="rento" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Rento</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="ammattimainen" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Ammattimainen</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="innostava" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Innostava</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="ystävällinen" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Ystävällinen</span>
+                </label>
+                <label class="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="brandin-luonne" value="laadukas" class="h-5 w-5 text-primary focus:ring-primary border-black rounded-sm shrink-0 mr-3">
+                  <span class="text-lg text-black">Laadukas</span>
+                </label>
+              </div>
+            </details>
+          </div>
+
+          <div class="relative">
+            <label for="etusivun-tavoite" class="block text-lg mb-2">Etusivun tavoite</label>
+            <select
+              id="etusivun-tavoite"
+              name="etusivun-tavoite"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white appearance-none pr-10"
+            >
+              <option value="">Mitä haluatte kävijän ensisijaisesti tekevän etusivulla?</option>
+              <option value="luotettava">Yhteydenotto</option>
+              <option value="rento">Ajanvaraus</option>
+              <option value="ammattimainen">Palveluihin tutustuminen</option>
+              <option value="innostava">Tarjouspyyntö</option>
+              <option value="ystävällinen">Jokin muu</option>
+            </select>
+            <svg
+              class="absolute right-4 top-[3.2rem] w-4 h-4 pointer-events-none text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+
+          <div>
+            <label for="message" class="block text-lg mb-2">Lisättävää? Kerro se tässä</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-y"
+            ></textarea>
+          </div>
+
+          <div class="flex items-start">
+            <input
+              type="checkbox"
+              id="gdpr"
+              name="gdpr"
+              required
+              class="h-5 w-5 mt-1 text-primary focus:ring-primary border-black rounded-sm shrink-0"
+            />
+            <label for="gdpr" class="ml-3 block text-base font-light leading-6">
+              Hyväksyn tietojeni käsittelyn <a href="/tietosuojaseloste" class="underline hover:text-primary">tietosuojaselosteen</a> mukaisesti.*
+            </label>
+          </div>
+
+          <div class="flex justify-start mt-2">
+            <button
+              type="submit"
+              id="submitButton"
+              class="px-8 py-3 bg-primary text-white font-medium rounded-sm hover:opacity-90 transition-opacity border border-primary shadow-sm"
+            >
+              Lähetä viesti
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      const submitButton = document.getElementById("submitButton");
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerText = "Lähetetään...";
+        submitButton.classList.add("opacity-50", "cursor-not-allowed");
+      }
+    });
+  }
+
+  // Close details dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    const details = document.querySelectorAll('details');
+    details.forEach(function(detail) {
+      if (detail.hasAttribute('open') && !detail.contains(e.target)) {
+        detail.removeAttribute('open');
+      }
+    });
+  });
+
+  function setupMultiSelect(name, maxLimit, defaultText) {
+    const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+    if (checkboxes.length === 0) return;
+    
+    // Find the shared details container and summary span
+    const details = checkboxes[0].closest('details');
+    const summarySpan = details.querySelector('summary span');
+
+    function updateState() {
+      const checked = Array.from(checkboxes).filter(cb => cb.checked);
+      
+      // Update summary text
+      if (checked.length > 0) {
+        const labels = checked.map(cb => cb.nextElementSibling.textContent.trim());
+        summarySpan.textContent = labels.join(', ');
+      } else {
+        summarySpan.textContent = defaultText;
+      }
+
+      // Enforce limit
+      const isMaxReached = checked.length >= maxLimit;
+      checkboxes.forEach(cb => {
+        if (!cb.checked) {
+          cb.disabled = isMaxReached;
+          if (isMaxReached) {
+            cb.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
+          } else {
+            cb.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
+          }
+        }
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateState);
+    });
+  }
+
+  setupMultiSelect('visuaalinen-tyyli', 3, 'Valitse sopivimmat (max. 3) vaihtoehtoa');
+  setupMultiSelect('brandin-luonne', 3, 'Valitse sopivimmat (max. 3) vaihtoehtoa');
+</script>
+</Layout>

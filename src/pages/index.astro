@@ -1,0 +1,383 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import borgaRef from '../assets/uploads/borga-boxing-referenssi.webp';
+import meriadocRef from '../assets/uploads/meriadoc-referenssi.webp';
+import baseballRef from '../assets/uploads/baseball-terapia-referenssi.webp';
+import { getCollection, getEntry } from "astro:content";
+
+// Hae ajankohtaista-postaukset
+const allPosts = await getCollection("ajankohtaista");
+
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
+
+// Ota vain 3 uusinta
+const latestPosts = sortedPosts.slice(0, 3);
+
+// Päivämäärien formatointi
+const postsWithFormattedDate = latestPosts.map((post) => {
+  const date = new Date(post.data.pubDate);
+  const formattedDate = date.toLocaleDateString("fi-FI");
+  return {
+    ...post,
+    formattedDate,
+  };
+});
+
+// Varmista että kuvapolku alkaa aina vinoviivalla
+const normalizeImagePath = (path) => {
+  if (!path) return path;
+  return path.startsWith("/") ? path : `/${path}`;
+};
+---
+
+<Layout 
+title="Etusivu" 
+description="Lorem lirum">
+  <!-- Hero section -->
+  <section class="w-full bg-musta relative font-heading">
+    
+    <div class="relative w-full mx-auto h-96 md:h-[810px]">
+      
+      <div class="absolute inset-0 w-full h-full overflow-hidden bg-musta">
+        <div class="absolute inset-0 w-full h-full">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/images/uploads/hero-tausta.webp">
+            <img
+              src="/images/uploads/hero-tausta.webp"
+              alt="WayOut pakohuoneet"
+              class="w-full h-full object-cover object-bottom" 
+              fetchpriority="high"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
+        </div>
+      </div>
+
+      <div class="absolute inset-x-0 bottom-12 z-50 max-w-8xl mx-auto px-s-4-m md:px-[68px]">
+        <h1 class="font-bold text-valkoinen leading-[0.75] tracking-tighter
+                   text-[23vw] md:text-[200px]
+                   translate-y-[15%]">
+          WayOut
+        </h1>
+      </div>
+    </div>
+
+    <div class="relative w-full bg-musta z-20">
+      
+      <!-- Introduktio & Kaupungit -->
+      <div class="relative flex flex-col lg:block max-w-8xl mx-auto">
+        
+        <!-- Kaupungit (Keltainen laatikko) -->
+        <!-- Mobile: Block. Desktop: Absolute Right, Centered Vertically. -->
+        <div class="w-full lg:w-auto z-30 mb-8 lg:mb-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
+          
+          <div class="bg-keltainen text-musta py-8 px-8 md:px-14 shadow-2xl
+                      flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-center slanted-box">
+            
+            <style>
+              /* Desktopilla vino vasen reuna */
+              @media (min-width: 1024px) {
+                .slanted-box {
+                  /* Vasen yläkulma (0,0) pysyy, leikkaa vasemmasta alakulmasta -> "\" muoto */
+                  clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+                  padding-left: 5rem;
+                }
+              }
+            </style>
+
+            <a href="/jyvaskyla" class="group flex flex-col gap-1">
+              <div class="flex items-center gap-2">
+                <span class="text-xl md:text-2xl font-bold font-heading group-hover:underline decoration-2 underline-offset-4">
+                  Jyväskylä
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 transition-transform group-hover:translate-x-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <span class="text-sm font-body font-medium">Seikkaile Jyväskylän<br>pakohuoneissa!</span>
+            </a>
+
+            <a href="/tampere" class="group flex flex-col gap-1">
+              <div class="flex items-center gap-2">
+                <span class="text-xl md:text-2xl font-bold font-heading group-hover:underline decoration-2 underline-offset-4">
+                  Tampere
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 transition-transform group-hover:translate-x-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <span class="text-sm font-body font-medium">Haasta Tampereen<br>pakohuoneet!</span>
+            </a>
+
+            <a href="/hyvinkaa" class="group flex flex-col gap-1">
+              <div class="flex items-center gap-2">
+                <span class="text-xl md:text-2xl font-bold font-heading group-hover:underline decoration-2 underline-offset-4">
+                  Hyvinkää
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 transition-transform group-hover:translate-x-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <span class="text-sm font-body font-medium">Ratkaise arvoitukset<br>Hyvinkäällä!</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Intro Text -->
+        <!-- Mobile: Flex item (2). Desktop: Standard Container Centered. -->
+        <div class="w-full px-s-4-m md:px-[68px] py-12 md:py-28 bg-musta">
+          <div class="w-full lg:max-w-[500px] text-valkoinen">
+            <p class="font-body text-body-normal-m md:text-xl font-normal leading-relaxed text-gray5">
+              Koe ikimuistoinen seikkailu elämyksellisissä pakohuoneissamme! Valikoimaamme kuuluu yhteensä 13 pakopeliä kolmessa kaupungissa.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 section -->
+  <section class="w-full bg-[linear-gradient(to_bottom,#0D0D0D_0%,#0D0D0D_10%,#27272A_50%,#0D0D0D_90%,#0D0D0D_100%)] text-valkoinen">
+    <div class="max-w-8xl mx-auto md:pt-s-10-d px-s-2-m md:px-[68px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-24 pb-s-10-m">
+        <h2
+          class="text-h2-m md:text-h2-d font-bold font-heading md:leading-[46.2px] md:max-w-xl pt-s-4-m pb-s-3-m">
+          Unohtumattomia pakohuone-elämyksiä
+        </h2>
+        <p class="text-base font-normal leading-6 pt-s-4-m pb-s-3-m">
+          Pakohuone WayOutilla on ainutlaatuinen kokemus, sillä suunnittelemme ja rakennamme jokaisen huoneen itse. Huoneiden teemat ja tarinat tempaavat mukaansa ja takaavat mieleenpainuvan pakopelikokemuksen. Rennot, mutta asiantuntevat työntekijämme huolehtivat, että teillä on varmasti hauskaa! 
+          <br /><br />
+          Pakopelaaminen parantaa yhteishenkeä, ne viihdyttävät ja saattavat jopa koukuttaa! Pelin aikana pääsette käyttämään loogista päättelykykyä, tiimityöskentelytaitoja, luovuutta ja heittäytymään huoneen maailmaan.
+          <br /><br />
+          Huoneet sopivat erinomaisesti esimerkiksi kaveriporukoille, perheille, yritysryhmille, tiimeille ja pariskunnille. Ennen kaikkea suosittelemme huoneitamme ihmisille, jotka pitävät uusista kokemuksista, seikkailuista, elämyksistä ja haluavat pitää hauskaa!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 section -->
+  <section class="w-full bg-musta text-valkoinen">
+    <div class="max-w-8xl mx-auto px-s-2-m md:px-[68px] pb-s-10-m">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
+        <!-- 1 -->
+        <div class="flex flex-col items-center gap-4">
+          <img src="/images/uploads/person_celebrate.svg" alt="Uusia elämyksiä" class="h-12 w-12 md:h-16 md:w-16" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-body text-lg md:text-xl font-normal">Uusia elämyksiä</h3>
+            <p class="font-body text-sm md:text-base text-gray4 max-w-[200px] mx-auto">Astu sisään ja koe pakohuone, joka yllättää joka kerta</p>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="flex flex-col items-center gap-4">
+          <img src="/images/uploads/groups.svg" alt="Yhteistä tekemistä" class="h-12 w-12 md:h-16 md:w-16" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-body text-lg md:text-xl font-normal">Yhteistä tekemistä</h3>
+            <p class="font-body text-sm md:text-base text-gray4 max-w-[200px] mx-auto">Ratkaiskaa arvoituksia yhdessä ja luokaa unohtumattomia hetkiä.</p>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="flex flex-col items-center gap-4">
+          <img src="/images/uploads/key.svg" alt="Uniikit huoneet" class="h-12 w-12 md:h-16 md:w-16" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-body text-lg md:text-xl font-normal">Uniikit huoneet</h3>
+            <p class="font-body text-sm md:text-base text-gray4 max-w-[200px] mx-auto">Jokainen huone on oma tarinansa –lähde mukaan seikkailuun</p>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="flex flex-col items-center gap-4">
+          <img src="/images/uploads/icon.svg" alt="Keskeinen sijainti" class="h-12 w-12 md:h-16 md:w-16" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-body text-lg md:text-xl font-normal">Keskeinen sijainti</h3>
+            <p class="font-body text-sm md:text-base text-gray4 max-w-[200px] mx-auto">pakopeliseikkailu lähellä sinua.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 section - asiakastarinat -->
+    <section class="w-full">
+      <div
+        class="max-w-8xl mx-auto py-s-10-m md:py-s-10-d px-s-3-m md:px-[68px]">
+        <div class="flex justify-start">
+          <h2
+            class="text-h2-m md:text-h2-d font-bold font-heading md:leading-[46.2px] md:pb-[24px] pb-s-5-m">
+            Kokemuksia pakohuoneista
+          </h2>
+        </div>
+        <p class="text-base font-normal font-body md:leading-6 md:pb-s-5-d pb-s-5-m">
+            Näin asiakkaamme kuvaavat unohtumattomia hetkiä WayOutin huoneissa.
+          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:gap-6 gap-s-5-m">
+          <!-- Asiakastarina 1 -->
+          <div class="border border-primary flex flex-col">
+            <div
+              class="py-s-4-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start">
+                <img
+                  src="/images/uploads/quote.webp"
+                  alt="Meriadoc nettisivut asiakastarina"
+                  class="pb-s-2-m md:pb-s-2-d"
+                />
+              </div>
+              <div class="flex justify-start flex-1">
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Yhteistyö Meriadocin kanssa verkkosivujen valmistuksessa oli mutkatonta ja tehokasta. Toiveitamme kuunneltiin ja 
+                  saimme olla mukana sivujen suunnitteluvaiheessa, jonka myötä rakennettiin meidän näköiset verkkosivut.
+                  Läpi prosessin pidimme säännöllisiä palavereita ja sivujen kehittäminen tulevaisuuden varalle jatkuu edelleen. 
+                </p>
+              </div>
+              <div class="flex justify-start mt-auto">
+                <p class="text-base leading-6">
+                  Tomi Korkeamäki <br /> Baseball Terapia
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Asiakastarina 2 -->
+          <div class="border border-primary flex flex-col">
+            <div
+              class="py-s-4-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full">
+              <div class="flex justify-start">
+                <img
+                  src="/images/uploads/quote.webp"
+                  alt="Meriadoc nettisivut asiakastarina"
+                  class="pb-s-2-m md:pb-s-2-d"
+                />
+              </div>
+              <div class="flex justify-start flex-1">
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Päätimme uudistaa seuramme nettisivut Meriadocin palveluiden avulla. Projektin aloitus oli 
+                  todella vaivaton prosessi ja heti suunnittelusta lähtien sivut näyttivät siltä miltä halusimme. 
+                  Saimme valmiit, avaimet käteen -periaatteella toimivat sivut nopeasti, ja projekti pysyi tasan budjetissa.
+                  Olemme erittäin tyytyväisiä sekä lopputulokseen että koko prosessiin.
+                </p>
+              </div>
+              <div class="flex justify-start mt-auto">
+                <p class="text-base leading-6">
+                  Kristian Nieminen <br /> Borgå Boxing
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Asiakastarina 3 -->
+          <div class="border border-primary flex flex-col">
+            <div
+              class="py-s-4-m md:py-s-4-d px-s-3-m md:px-s-3-d flex flex-col h-full"
+            >
+              <div class="flex justify-start">
+                <img
+                  src="/images/uploads/quote.webp"
+                  alt="Meriadoc nettisivut asiakastarina"
+                  class="pb-s-2-m md:pb-s-2-d"
+                />
+              </div>
+              <div class="flex justify-start flex-1">
+                <p class="text-base leading-6 pb-s-4-m md:pb-s-4-d">
+                  Meriadocin kanssa yhteistyö nettisivuja tehdessä oli todella sujuvaa ja helppoa. Mukana oli ideoita, joita en itse 
+                  osannut edes ajatella, ja toteutus oli erinomainen. Kaikki yksityiskohdat oli mietitty viimeisen päälle, ja 
+                  käytettävyys toimii hyvin niin mobiilissa kuin tietokoneella. Suosittelen Meriadocia lämpimästi kaikille, jotka 
+                  haluavat ammattitaitoiset ja toimivat nettisivut yritykselleen!
+                </p>
+              </div>
+              <div class="flex justify-start mt-auto">
+                <p class="text-base leading-6">
+                  Kaisla Mäkinen <br /> Osteopaatti Kaisla
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 section - ajankohtaista -->
+  <section class="w-full">
+    <div class="max-w-8xl mx-auto md:px-[64px] px-s-3-m pt-s-10-m md:pt-s-10-d">
+      <div class="flex justify-between items-end pb-s-5-m md:pb-s-5-d">
+        <h2
+          class="text-h2-m md:text-h2-d font-normal font-heading self-strech inline-flex items-end">
+          Ajankohtaista
+        </h2>
+        <div class="hidden md:flex justify-center items-end">
+          <a
+            href="/ajankohtaista"
+            class="px-6 py-3 bg-white rounded-sm shadow-[0px_4px_6.599999904632568px_0px_rgba(128,128,128,0.25)] border border-black inline-flex items-center gap-2.5 text-center text-black text-lg font-medium leading-5 transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">
+            Lisää artikkeleita
+          </a>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-7">
+        {
+          postsWithFormattedDate.map((post) => {
+             // Luodaan slug kategoriasta linkkiä varten
+             const categorySlug = post.data.category ? post.data.category.toLowerCase().replace(/\s+/g, '-') : 'yleinen';
+
+             return (
+            <a 
+              /* Linkki päivitetty sisältämään kategoria */
+              href={`/ajankohtaista/${categorySlug}/${post.slug}`}
+              class="relative w-full h-auto lg:h-[600px] rounded-lg inline-flex flex-col justify-start items-start group transition-colors"
+              aria-label={`Lue artikkeli: ${post.data.title}`}
+            >
+              <div class="w-full h-80 relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.20)] overflow-hidden rounded-sm flex-shrink-0 mb-s-2-m md:mb-s-2-d">
+                {post.data.image ? (
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-80 left-0 top-0 absolute rounded-sm object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div class="w-full h-80 bg-gray-100 flex items-center justify-center pb-s-2-m">
+                    <img
+                      src="/images/uploads/logo.webp"
+                      alt="Meriadoc Oy"
+                      class="h-20 opacity-50"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div class="flex flex-col h-auto w-full md:h-full">
+                
+                {/* UUSI: Kategoria tässä. Siirsin pt-s-2-m tähän otsikosta. */}
+                <div class="pt-s-2-m flex justify-start">
+                    <span class="font-body text-sm md:text-base text-neutral-600 mb-1 block">
+                        {post.data.category || "Kategoria"}
+                    </span>
+                </div>
+
+                <div class="relative mb-0 md:mb-s-2-d flex-shrink-0">
+                  {/* POISTETTU: pt-s-2-m, koska se on nyt ylläolevassa divissä */}
+                  <h3 class="text-h3-m md:text-h4-d font-heading font-normal text-black line-clamp-2">
+                    {post.data.title}
+                  </h3>
+                  <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-s-brown transition-all duration-300 group-hover:w-full translate-y-2" />
+                </div>
+
+                <div class="flex-1 flex flex-col justify-between">
+                  <p class="font-body py-s-3-m md:py-s-2-d">
+                    {post.data.description}
+                  </p>
+                  
+                  <div class="border-t border-primary pb-s-6-m pt-s-3-m md:pt-s-2-d">
+                    <p class="font-body text-sm">{post.formattedDate}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          )})
+        }
+      </div>
+  </section>
+    </Layout>

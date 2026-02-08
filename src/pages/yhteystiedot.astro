@@ -1,0 +1,193 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+title="Yhteystiedot"
+description="Osta yrityksellesi uudet kotisivut. Ole meihin yhteydessä ja suunnitellaan myös teille uniikit verkkosivut, jotka erottuvat massasta.">
+
+<section class="w-full relative min-h-[300px] md:min-h-[400px] flex justify-center">
+    <div class="max-w-8xl w-full relative">
+    
+    <picture>
+      <source media="(min-width: 768px)" srcset="/images/uploads/bg-green-d.svg">
+      <img
+        src="/images/uploads/bg-green-m-ala.svg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+      />
+    </picture>
+
+    <div class="relative z-10 py-s-10-m px-s-3-m md:py-s-10-d md:px-[68px]">
+      <div>
+        <h1 class="text-h1-m md:text-h1-d font-heading md:leading-[84px] md:pb-s-3-d pb-s-5-m">
+          Yhteystiedot
+        </h1>
+      </div>
+
+      <div class="inline-flex justify-start items-end gap-16">
+        <p class="max-w-[641px] justify-start font-normal md:text-base leading-6 md:gap-7">
+          Ota ensimmäinen askel kohti unelmiesi verkkosivuja ottamalla meihin yhteyttä. Autamme sinua mielellämme kaikissa
+          kysymyksissä ja tarjoamme käsin tehtyjä ratkaisuja yrityksesi tarpeisiin. Pyydä tarjous alla olevan lomakkeen kautta.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full">
+  <div class="max-w-8xl mx-auto py-s-10-m md:py-s-10-d px-s-3-m md:px-[68px]">
+    <div class="flex justify-start items-center pb-s-1-m md:pb-s-1-d">
+      <img
+        src="/images/uploads/message.svg"
+        alt="Viesti ikoni"
+        class="w-5 h-5 md:w-8 md:h-8"
+      />
+      <p class="text-[#646464] text-xl font-normal leading-7 pl-[4px]">
+        Jutellaan
+      </p>
+    </div>
+    <div class="flex justify-start mb-s-5-m md:mb-s-6-d">
+      <h2 class="text-h2-m md:text-h2-d font-normal font-heading md:leading-[46.2px]">
+        Pyydä tarjous tai kysy lisää
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+      
+      <div class="flex flex-col lg:col-span-4 space-y-8">
+        <div>
+          <h3 class="text-h4-m md:text-h4-d font-heading mb-2">Myynti</h3>
+          <p class="text-lg font-light leading-7">
+            Juuso Silén<br />
+            +358 41 311 9351<br />
+            juuso@meriadoc.fi
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-h4-m md:text-h4-d font-heading mb-2">Y-tunnus</h3>
+          <p class="text-lg font-light leading-7">Meriadoc Oy</p>
+          <p class="text-lg font-light leading-7">3528697-7</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8">
+        <form
+          name="yhteydenotto"
+          method="POST"
+          action="/kiitos-viestistasi"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          class="flex flex-col gap-6" 
+          id="contactForm"
+        >
+          <input type="hidden" name="form-name" value="yhteydenotto" />
+
+          <div class="hidden">
+            <label>Älä täytä tätä: <input name="bot-field" /></label>
+          </div>
+
+          <div class="relative">
+            <label for="inquiry_type" class="block text-lg mb-2">Yhteydenoton tyyppi*</label>
+            <select
+              id="inquiry_type"
+              name="inquiry_type"
+              required
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white appearance-none pr-10"
+            >
+              <option value="">Valitse...</option>
+              <option value="tarjouspyynto-verkkosivut">Uudet verkkosivut</option>
+              <option value="tarjouspyynto-SEO-sisalto">Hakukoneoptimoidun (SEO) sisällön luonti</option>
+              <option value="tarjouspyynto-optimointi">Tekninen SEO-optimointi</option>
+              <option value="tarjouspyynto-nykyiset-sivut-tekninen">Nykyisten sivujen tekninen optimointi</option>
+              <option value="tarjouspyynto-nykyiset-sivut-visuaalinen">Nykyisten sivujen visuaalinen optimointi</option>
+            </select>
+            <svg class="absolute right-4 top-[3.2rem] w-4 h-4 pointer-events-none text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="company" class="block text-lg mb-2">Yritys*</label>
+              <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"/>
+            </div>
+            <div>
+              <label for="name" class="block text-lg mb-2">Nimi*</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"/>
+            </div>
+          </div>
+
+          <div>
+            <label for="website" class="block text-lg mb-2">Nykyiset verkkosivut</label>
+            <input type="text" id="website" name="website" class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"/>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-lg mb-2">Sähköposti*</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"/>
+            </div>
+            <div>
+              <label for="phone" class="block text-lg mb-2">Puhelinnumero</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white"/>
+            </div>
+          </div>
+
+          <div class="relative">
+            <label for="budget" class="block text-lg mb-2">Suunniteltu budjetti (€)?</label>
+            <select
+              id="budget"
+              name="budget"
+              class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white appearance-none pr-10"
+            >
+              <option value="">Valitse...</option>
+              <option value="1000-2000">1000 - 2000</option>
+              <option value="2000-3000">2000 - 3000</option>
+              <option value="3000-5000">3000 - 5000</option>
+              <option value="5000-7000">5000 - 7000</option>
+              <option value="over-7000">7000 +</option>
+            </select>
+            <svg class="absolute right-4 top-[3.2rem] w-4 h-4 pointer-events-none text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+
+          <div>
+            <label for="message" class="block text-lg mb-2">Kerro lisää?</label>
+            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-sm border border-black focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-y"></textarea>
+          </div>
+
+          <div class="flex items-start">
+            <input type="checkbox" id="gdpr" name="gdpr" required class="h-5 w-5 mt-1 text-primary focus:ring-primary border-black rounded-sm shrink-0"/>
+            <label for="gdpr" class="ml-3 block text-base font-light leading-6">
+              Hyväksyn tietojeni käsittelyn <a href="/tietosuojaseloste" class="underline hover:text-primary">tietosuojaselosteen</a> mukaisesti.*
+            </label>
+          </div>
+
+          <div class="flex justify-start mt-2">
+            <button type="submit" id="submitButton" class="px-8 py-3 bg-primary text-white font-medium rounded-sm hover:opacity-90 transition-opacity border border-primary shadow-sm">
+              Lähetä viesti
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      const submitButton = document.getElementById("submitButton");
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerText = "Lähetetään...";
+        submitButton.classList.add("opacity-50", "cursor-not-allowed");
+      }
+    });
+  }
+</script>
+</Layout>

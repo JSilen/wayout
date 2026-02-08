@@ -1,0 +1,57 @@
+<div 
+  id="cookie-banner" 
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] md:w-auto md:min-w-[650px] bg-white border border-emerald-800 p-4 md:p-6 shadow-2xl z-[100] hidden font-body"
+>
+  <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-lg font-heading text-emerald-800 font-semibold mb-1">Evästeet & yksityisyys</h2>
+      <p class="text-xs md:text-sm text-black/80 leading-relaxed">
+        Käytämme evästeitä analysoidaksemme liikennettä ja parantaaksemme käyttäjäkokemusta. 
+        <a href="/tietosuojaseloste#evasteet" class="underline hover:text-emerald-800">Lue lisää tietosuojasta.</a>
+      </p>
+    </div>
+    
+    <div class="flex gap-3 shrink-0">
+      <button id="decline-cookies" class="px-4 py-2 bg-white border border-emerald-800 text-emerald-800 text-xs md:text-sm font-medium rounded-sm hover:bg-gray-50 transition-colors">
+        Vain välttämättömät
+      </button>
+      <button id="accept-cookies" class="px-4 py-2 bg-emerald-800 text-white text-xs md:text-sm font-medium rounded-sm hover:bg-emerald-700 transition-colors shadow-sm">
+        Hyväksy kaikki
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  const currentConsent = localStorage.getItem('cookie_consent');
+
+  if (!currentConsent) {
+    banner?.classList.remove('hidden');
+  }
+
+  function handleConsent(status) {
+    localStorage.setItem('cookie_consent', status);
+    banner?.classList.add('hidden');
+    
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': status,
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status
+      });
+      
+      window.dataLayer.push({
+        event: 'consent_update',
+        consent_status: status
+      });
+    }
+  }
+
+  acceptBtn?.addEventListener('click', () => handleConsent('granted'));
+  declineBtn?.addEventListener('click', () => handleConsent('denied'));
+</script>

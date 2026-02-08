@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Tietosuojaseloste" description="Meriadoc Oy:n tietosuojaseloste ja evästekäytännöt.">
+  <section class="w-full pt-s-10-m md:pt-s-10-d pb-s-10-m px-s-3-m md:px-[68px] max-w-4xl mx-auto">
+    <h1 class="text-h2-m md:text-h2-d font-heading mb-8 uppercase tracking-wide">Tietosuojaseloste</h1>
+    
+    <div class="prose prose-lg max-w-none text-black font-body space-y-8">
+      <p class="text-sm italic">Päivitetty viimeksi: 9.1.2026</p>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4">1. Rekisterinpitäjä</h2>
+        <p>
+          Tämän verkkosivuston rekisterinpitäjänä toimii <strong>Meriadoc Oy</strong> (y-tunnus: 3528697-7). Toimipaikkamme sijaitsee Turussa ja voit olla meihin yhteydessä kaikissa tietosuojaan liittyvissä kysymyksissä sähköpostitse osoitteeseen <a href="mailto:juuso@meriadoc.fi" class="underline hover:text-emerald-800 transition-colors">juuso@meriadoc.fi</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4">2. Käsiteltävät henkilötiedot ja tiedonlähteet</h2>
+        <p>Käsittelemme pääasiassa tietoja, jotka annat meille vapaaehtoisesti yhteydenottolomakkeiden, sähköpostin tai kampanjaosallistumisten yhteydessä. Näitä tietoja ovat tyypillisesti <strong>nimi, sähköpostiosoite, puhelinnumero, yrityksen nimi</strong> sekä viestisi sisältö, kuten budjettiarvio tai projektin kuvaus. Verkkosivuston käytöstä kerätään lisäksi teknisiä tietoja evästeiden avulla.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4">3. Käsittelyn tarkoitus ja oikeusperuste</h2>
+        <p>Henkilötietojesi käsittely perustuu <strong>oikeutettuun etuun</strong>, joka liittyy asiakassuhteen hoitamiseen ja markkinointiin, sekä <strong>sopimusta edeltäviin toimenpiteisiin</strong>, kuten tarjouspyyntöihin tai visuaalisen uudistusehdotuksen tilaamiseen. Tietoja käytetään asiakasyhteydenpitoon, palveluidemme toteuttamiseen, tarjousten tekemiseen sekä sivuston käytön analysointiin ja kehittämiseen.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4 text-black">4. Tietojen luovutukset ja siirrot</h2>
+        <p>Emme myy, vuokraa tai luovuta tietojasi ulkopuolisille tahoille heidän omaan markkinointikäyttöönsä. Käytämme luotettavia palveluntarjoajia (kuten web-hotellit ja analytiikkapalvelut) tietojen teknisessä käsittelyssä. Käytämme Google Analytics -palvelun vuoksi tietoja, jotka voivat siirtyä EU/ETA-alueen ulkopuolelle, kuten Yhdysvaltoihin. Huolehdimme tällöin siitä, että siirto on lainmukainen ja suojatoimet, kuten Euroopan komission vakiosopimuslausekkeet, ovat käytössä.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4">5. Tietojen säilytysaika</h2>
+        <p>Säilytämme henkilötietojasi vain niin kauan kuin se on tarpeen tässä selosteessa määriteltyjen käyttötarkoitusten täyttämiseksi. Esimerkiksi potentiaalisten asiakkaiden tietoja säilytetään tyypillisesti tarjousprosessin ajan tai kunnes rekisteröity pyytää tietojensa poistamista, ellei lainsäädäntö (kuten kirjanpitolaki) velvoita pidempään säilytykseen.</p>
+      </section>
+
+      <section id="evasteet">
+        <h2 class="text-2xl font-heading font-semibold mb-4">6. Evästekäytännöt</h2>
+        <p>
+          Käytämme sivustollamme evästeitä parantaaksemme käyttäjäkokemusta ja analysoidaksemme liikennettä. Osa evästeistä on sivuston toiminnalle välttämättömiä, kun taas tilastollisia evästeitä käytetään vain suostumuksellasi.
+        </p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead class="bg-gray-50 text-sm">
+              <tr>
+                <th class="border border-gray-200 p-3 text-left">Eväste</th>
+                <th class="border border-gray-200 p-3 text-left">Tarkoitus</th>
+                <th class="border border-gray-200 p-3 text-left">Kesto</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr>
+                <td class="border border-gray-200 p-3 font-medium"><code>cookie_consent</code></td>
+                <td class="border border-gray-200 p-3">Tallentaa tiedon evästevalinnastasi.</td>
+                <td class="border border-gray-200 p-3">1 vuosi</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3 font-medium"><code>_ga, _gid</code></td>
+                <td class="border border-gray-200 p-3">Google Analytics -tilastot (kerätään vain luvalla).</td>
+                <td class="border border-gray-200 p-3">2 vuotta / 24h</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-sm italic mb-4">
+          Voit muuttaa tai peruuttaa suostumuksesi evästeisiin milloin tahansa selaimesi asetuksista tai nollaamalla valinnat alta:
+        </p>
+        
+        <button 
+          onclick="localStorage.removeItem('cookie_consent'); location.reload();"
+          class="px-6 py-2 bg-emerald-800 text-white text-sm font-medium rounded-sm hover:bg-emerald-700 transition-colors"
+        >
+          Nollaa evästeasetukset
+        </button>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-heading font-semibold mb-4">7. Rekisteröidyn oikeudet</h2>
+        <p>
+          Sinulla on oikeus tarkastaa itseäsi koskevat tiedot, oikeus vaatia virheellisen tiedon korjaamista sekä oikeus pyytää tietojesi poistamista (”oikeus tulla unohdetuksi”). Sinulla on myös oikeus kieltää tietojesi käyttö suoramarkkinointiin. Voit käyttää näitä oikeuksia lähettämällä sähköpostia osoitteeseen <strong>juuso@meriadoc.fi</strong>. Mikäli katsot, että tietojasi käsitellään lainvastaisesti, sinulla on oikeus tehdä valitus tietosuojavaltuutetulle.
+        </p>
+      </section>
+    </div>
+  </section>
+</Layout>

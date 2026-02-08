@@ -1,0 +1,132 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# publish_mode: editorial_workflow #
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Sivut"
+    files:
+      # ETUSIVU
+      - label: "Etusivu"
+        name: "etusivu"
+        file: "src/content/pages/etusivu.md"
+        fields:
+          - { label: "Sivun otsikko", name: "title", widget: "string" }
+          - { label: "Pääkuva", name: "hero_image", widget: "image", required: false }
+          - { label: "Heron otsikko", name: "hero_title", widget: "string", required: false }
+          - { label: "Heron teksti", name: "hero_paragraph", widget: "string", required: false }
+          - { label: "Heron napin teksti", name: "hero_button_text", widget: "string", required: false }
+          - { label: "Heron napin linkki", name: "hero_button_link", widget: "string", required: false }
+          - { label: "Pääotsikko", name: "main_title", widget: "string", required: false }
+          - { label: "Pääkappale 1", name: "main_paragraph_1", widget: "text", required: false }
+          - { label: "Pääkappale 2", name: "main_paragraph_2", widget: "text", required: false }
+          - { label: "Grid Otsikko 1 (Jäsenyys)", name: "grid_title_1", widget: "string", required: false }
+          - { label: "Grid Kappale 1", name: "grid_paragraph_1", widget: "text", required: false }
+          - { label: "Grid Kuva 1", name: "grid_picture_1", widget: "image", required: false }
+          - { label: "Grid 1 Napin teksti", name: "grid_button_1_text", widget: "string", required: false }
+          - { label: "Grid 1 Napin linkki", name: "grid_button_1_link", widget: "string", required: false }
+          - { label: "Grid Otsikko 2 (Meistä)", name: "grid_title_2", widget: "string", required: false }
+          - { label: "Grid Kappale 2", name: "grid_paragraph_2", widget: "text", required: false }
+          - { label: "Grid Kuva 2", name: "grid_picture_2", widget: "image", required: false }
+          - { label: "Grid 2 Napin teksti", name: "grid_button_2_text", widget: "string", required: false }
+          - { label: "Grid 2 Napin linkki", name: "grid_button_2_link", widget: "string", required: false }
+          - { label: "Ilmoittautumisotsikko", name: "signup_title", widget: "string", required: false }
+          - { label: "Ilmoittautumiskappale", name: "signup_paragraph", widget: "text", required: false }
+          - { label: "Ilmoittautumisen napin teksti", name: "signup_button_text", widget: "string", required: false }
+          - { label: "Ilmoittautumisen napin linkki", name: "signup_button_link", widget: "string", required: false }
+          - label: "Treenikalenteri"
+            name: "treenit"
+            widget: "list"
+            required: false
+            fields:
+            - {label: "Treenin nimi", name: "treeni_title", widget: "string"}
+            - {label: "Päivä", name: "day", widget: "select", options: ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"]}
+            - {label: "Alkamisaika", name: "start_time", widget: "string", hint: "Muodossa HH:MM", pattern: ["^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", "Ajan on oltava muodossa HH:MM, esim. 17:30"]}
+            - {label: "Päättymisaika", name: "end_time", widget: "string", hint: "Muodossa HH:MM", pattern: ["^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", "Ajan on oltava muodossa HH:MM, esim. 17:30"]}
+            - {label: "Lisätieto", name: "type", widget: "string", required: false, hint: "Esim. 'ryhmä 1' tai jätä tyhjäksi"}
+
+      # JÄSENYYS JA MAKSAMINEN -SIVU
+      - label: "Jäsenyys ja maksaminen"
+        name: "jasenyys-ja-maksaminen"
+        file: "src/content/pages/jasenyys-ja-maksaminen.md"
+        fields:
+          - { label: "Sivun otsikko", name: "title", widget: "string" }
+          - { label: "Pääkuva", name: "hero_image", widget: "image", required: false }
+          - { label: "Johdantoteksti", name: "intro_text", widget: "text", required: false }
+          - { label: "Otsikko: Sisältö", name: "sisalto_title", widget: "string", required: false }
+          - { label: "Teksti: Sisältö", name: "sisalto_text", widget: "text", required: false }
+          - { label: "Otsikko: Tietoa jäsenyydeestä", name: "tietoa_jasenyydesta_title", widget: "string", required: false }
+          - { label: "Teksti: Tietoa jäsenyydestä", name: "tietoa_jasenyydesta_text", widget: "text", required: false }
+          - { label: "Otsikko: Ilmoittaudu", name: "ilmoittaudu_title", widget: "string", required: false }
+          - { label: "Teksti: Ilmoittaudu", name: "ilmoittaudu_text", widget: "text", required: false }
+          - { label: "Osta-napin teksti", name: "ilmoittaudu_button_text", widget: "string", required: false }
+          - { label: "Osta-napin linkki", name: "ilmoittaudu_button_link", widget: "string", required: false }
+          - { label: "Alkeiskurssin hinta", name: "alkeiskurssi_hinta", widget: "string", required: false }
+          - { label: "Alkeiskurssin teksti", name: "alkeiskurssi_text", widget: "text", required: false }
+          - { label: "Kuntokurssien hinta", name: "kuntokurssit_hinta", widget: "string", required: false }
+          - { label: "Kuntokurssien teksti", name: "kuntokurssit_text", widget: "text", required: false }
+          - { label: "Jäsenmaksun hinta", name: "jasenmaksu_hinta", widget: "string", required: false }
+          - { label: "Jäsenmaksun teksti", name: "jasenmaksu_text", widget: "text", required: false }
+
+      # VALMENTAJAT-SIVU
+      - label: "Valmentajat"
+        name: "valmentajat"
+        file: "src/content/pages/valmentajat.md"
+        fields:
+          - { label: "Sivun otsikko", name: "title", widget: "string" }
+          - { label: "Pääkuva", name: "hero_image", widget: "image", required: false }
+          - { label: "Sivun kuvaus", name: "valmentajat_text", widget: "text", required: false }
+          - { label: "Valmentaja 1: Nimi", name: "valmentaja1", widget: "string", required: false }
+          - { label: "Valmentaja 1: Kuvaus", name: "valmentaja1_text", widget: "text", required: false }
+          - { label: "Valmentaja 1: Kuva", name: "valmentaja1_pic", widget: "image", required: false }
+          - { label: "Valmentaja 2: Nimi", name: "valmentaja2", widget: "string", required: false }
+          - { label: "Valmentaja 2: Kuvaus", name: "valmentaja2_text", widget: "text", required: false }
+          - { label: "Valmentaja 2: Kuva", name: "valmentaja2_pic", widget: "image", required: false }
+          - { label: "Valmentaja 3: Nimi", name: "valmentaja3", widget: "string", required: false }
+          - { label: "Valmentaja 3: Kuvaus", name: "valmentaja3_text", widget: "text", required: false }
+          - { label: "Valmentaja 3: Kuva", name: "valmentaja3_pic", widget: "image", required: false }
+          - { label: "Valmentaja 4: Nimi", name: "valmentaja4", widget: "string", required: false }
+          - { label: "Valmentaja 4: Kuvaus", name: "valmentaja4_text", widget: "text", required: false }
+          - { label: "Valmentaja 4: Kuva", name: "valmentaja4_pic", widget: "image", required: false }
+          - { label: "Valmentaja 5: Nimi", name: "valmentaja5", widget: "string", required: false }
+          - { label: "Valmentaja 5: Kuvaus", name: "valmentaja5_text", widget: "text", required: false }
+          - { label: "Valmentaja 5: Kuva", name: "valmentaja5_pic", widget: "image", required: false }
+          - { label: "Valmentaja 6: Nimi", name: "valmentaja6", widget: "string", required: false }
+          - { label: "Valmentaja 6: Kuvaus", name: "valmentaja6_text", widget: "text", required: false }
+          - { label: "Valmentaja 6: Kuva", name: "valmentaja6_pic", widget: "image", required: false }
+          - { label: "Valmentaja 7: Nimi", name: "valmentaja7", widget: "string", required: false }
+          - { label: "Valmentaja 7: Kuvaus", name: "valmentaja7_text", widget: "text", required: false }
+          - { label: "Valmentaja 7: Kuva", name: "valmentaja7_pic", widget: "image", required: false }
+          - { label: "Valmentaja 8: Nimi", name: "valmentaja8", widget: "string", required: false }
+          - { label: "Valmentaja 8: Kuvaus", name: "valmentaja8_text", widget: "text", required: false }
+          - { label: "Valmentaja 8: Kuva", name: "valmentaja8_pic", widget: "image", required: false }
+
+      # AJANKOHTAISTA-SIVU
+      - label: "Ajankohtaista-sivu"
+        name: "ajankohtaista_sivu"
+        file: "src/content/pages/ajankohtaista.md"
+        fields:
+          - { label: "Sivun otsikko", name: "title", widget: "string" }
+          - { label: "Pääkuva", name: "hero_image", widget: "image", required: false }
+          - { label: "Sivun kuvausteksti", name: "ajankohtaista_text", widget: "text" }
+
+  # AJANKOHTAISTA (BLOGI)
+  - name: "ajankohtaista"
+    label: "Ajankohtaista (Blogi)"
+    folder: "src/content/ajankohtaista"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Otsikko", name: "title", widget: "string" }
+      - { label: "Julkaisupäivä", name: "date", widget: "datetime" }
+      - { label: "Kuva", name: "image", widget: "image" }
+      - { label: "Kuvan alt-teksti", name: "image_alt", widget: "string", hint: "Kirjoita kuvan sisältö näkövammaisille" }
+      - { label: "Kirjoittaja", name: "author", widget: "string", default: "Borgå Boxing" }
+      - { label: "Kuvaus (SEO)", name: "description", widget: "text", hint: "Lyhyt kuvaus hakukoneita varten (max 160 merkkiä)" }
+      - { label: "Tunnisteet", name: "tags", widget: "list", default: ["kuntonyrkkeily", "porvoo"] }
+      - { label: "Luonnos", name: "draft", widget: "boolean", default: false, hint: "Luonnokset eivät näy julkisella sivulla" }
+      - { label: "Sisältö", name: "body", widget: "markdown" }
